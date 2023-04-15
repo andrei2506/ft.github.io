@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Trends</title>
+    <style>
+        .burger {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: black;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+        .navbar{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #708090;
+            padding: 15px;
+        }
+        .navbar a{
+            text-decoration: none;
+            color: inherit;
+            font-family: Verdana;
+            font-size: large;
+        }
+        .logo{
+            margin-right: 50px;
+        }
+        .list{
+            color: white;
+            font-weight: bold;
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        #toggler,
+        .navbar label{
+            display: none;
+        }
+        #products{
+            padding-left: 90px;
+        }
+        #product1{
+            display: inline-block;
+            margin-top: 25px;
+            margin-left: 10px;
+            border: solid gray 2px;
+        }
+        #product1 img{
+            margin: 5px;
+        }
+        #product1 p{
+            margin: 5px;
+        }
+        @media screen and
+        (max-width: 600px){
+            .menu{
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+            }
+            .list{
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+            .navbar label{
+                display: inline-flex;
+                align-items: center;
+                cursor: pointer;
+            }
+            #toggler:checked ~ .menu{
+                max-height: 100%;
+            }
+        }
+        .product{
+            padding-left: 5%;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            display: flex;
+            border: solid grey 4px;
+            border-radius: 20px;
+        }
+        .head{
+            padding-left: 2%;
+        }
+    </style>
+</head>
+<body bgcolor="#F5F5F5">
+<nav class="navbar">
+    <a href="home.html" class="logo"><img src="image/Logo.png" height="150px" width="150px"></a>
+    <input type="checkbox" id="toggler">
+    <label class="burger" for="toggler">
+        <input type="checkbox" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    <div class="menu">
+        <ul class="list">
+            <li><a href="Home.html">Tops</a></li>
+            <li><a href="Accesories.html">Accesories</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
+</nav>
+    <hr width="100%" color="gray" size="2px">
+
+    <div class="product">
+        <div class="img">
+            <img src="image/Tle/AOT.jpg" height="250px" width="250px">
+        </div>
+        <div class="head">
+            <h3><font face="Verdana">Attack on Titan Shirt ‖ ₱250 <sub><font color="grey"><strike>₱500</strike></font></sub></font></h3>
+            <font face="roman" size="4px">Size: Medium</font><br>
+            <font face="roman" size="4px">Color: White, Maroon, Beige</font>
+        </div>
+    </div>
+</body>
+</html>
